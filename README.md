@@ -1,3 +1,13 @@
+# About this Project
+
+This is a chat web application where you can interact with people, make voice and video calls.
+The audio and video communication feature is enabled by [webRTC](https://webrtc.org/) and [Socket.IO](https://socket.io/)
+The web soocket used is Socket.IO
+
+# How it works
+You log in with any username (given that it is not being used in the app at the moment), the you select a profile from the ones online o send a request to the user. When the user accepts, you can chat via text, audio or video.
+
+
 # Hello Node!
 
 This project includes a Node.js server script and a web page that connects to it. The front-end page presents a form the visitor can use to submit a color name, sending the submitted value to the back-end API running on the server. The server returns info to the page that allows it to update the display with the chosen color. 🎨
