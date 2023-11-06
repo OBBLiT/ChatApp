@@ -1,0 +1,64 @@
+body{
+    display: grid;
+    background-color: rgb(0, 181, 187);
+}
+#header{
+    justify-self: center;
+    margin-top: 25vh;
+    color: rgb(88, 61, 20);
+    font-size: 4vw;
+}
+form{
+    display: grid;
+    width: 60%;
+    justify-self: center;
+    background-color: rgb(2, 105, 109);
+    border-radius: 3em;
+    box-shadow: rgb(0, 79, 82) 1em 1em 1em;
+    top: 30%;
+    border: rgb(151, 121, 75) 2px solid;
+}
+#textt{
+    margin-top: 1em;
+    justify-self: center;
+    color: navajowhite;
+    font-size: 3vw;
+}
+#input-text{
+    width: 50%;
+    justify-self: center;
+    border-radius: 2em;
+    margin: 0.5em;
+    border-color: navajowhite;
+    color: rgb(46, 41, 34);
+    background-color: rgb(209, 224, 224);
+}
+#error{
+    justify-self: center;
+    color: #ff0000;
+    margin: 0.5em;
+    margin-bottom: 0.8em;
+}
+#s-button{
+    justify-self: center;
+    width: 15%;
+    margin-bottom: 1em;
+    border-radius: 2em;
+    border-color: navajowhite;
+    color: navajowhite;
+    background-color: rgb(99, 130, 131);
+    font-size: 2vw;
+}
+#s-button:hover{
+    background-color: rgb(37, 59, 59);
+}
+#s-button:active{
+    background-color: rgb(21, 39, 39);
+}
+#notice{
+  position: fixed;
+  bottom: 0px;
+  color: rgb(88, 61, 20);
+  border: solid 1px;
+  font-weight: bolder;
+}

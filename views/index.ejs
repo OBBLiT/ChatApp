@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OCS</title>
+    <link rel="icon" href="https://cdn.glitch.global/53b8cfe1-6596-453c-9bc9-941b96533f6d/12482473461558965393-128.png?v=1642252740211" type="image/x-icon">
+    <link rel="stylesheet" href="/css/main.css">
+</head>
+<body>
+    <h1 id="header">OBBLiT's Chat Site</h1>
+    <form id="tform"  method="post" action="/chat">
+        <span id="textt">Input your username</span>
+        <input autocomplete="off" type="text" name="username" id="input-text" maxlength="20">
+        <span id="error"><%=error%></span>
+        <input id="s-button" type="submit" value="Start">
+    </form>
+      <p id='notice'>
+        NOTE: You can log in with any username having length from 1 to 20, but spaces are not allowed.</br> More than one person has to be logged in for the chat features to be explored.
+      </p>
+    <script src="/js/index.js"></script>
+</body>
+</html>

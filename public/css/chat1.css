@@ -1,0 +1,1034 @@
+#users-list-no-user{
+    grid-column: 1/11;
+    grid-row: 6/7;
+    text-align: center;
+    font-size: 7vw;
+}
+#connected-users-no-user{
+    grid-column: 1/11;
+    grid-row: 6/7;
+    text-align: center;
+    font-size: 7vw;
+}
+#open-sv{
+    display: none;
+}
+#sv-back{
+    display: none;
+}
+.user-unread{
+    height: 4vw;
+    width: 4vw;
+    background-color: gray;
+    border-radius: 50%;
+    float: right;
+}
+.message-unread{
+    text-align: center;
+}
+.user-conn{
+    height: 4vw;
+    width: 4vw;
+    background-color: white;
+    border-radius: 50%;
+    float: right;
+}
+#users-list-tag{
+    color: black;
+    -webkit-text-stroke: white 0.02em;
+    grid-row: 1/2;
+    grid-column: 3/9;
+    text-align: center;
+    line-height: 3em;
+}
+#connected-users-tag{
+    color: white;
+    -webkit-text-stroke: black 0.02em;
+    grid-row: 1/2;
+    grid-column: 3/9;
+    text-align: center;
+    line-height: 3em;
+}
+#ul-back{
+    display: static;
+    background-color: rgb(35, 167, 172);
+    border: solid rgb(0, 117, 121);
+    border-radius: 0.7em;
+    grid-row: 1/2;
+    grid-column: 1/3;
+    width: 3em;
+    height: 3em;
+    transition: 0.5s;
+    line-height: 3em;
+    text-align: center;
+    color: white;
+    -webkit-text-stroke: black 0.01em;
+}
+#ul-back:hover{
+    background-color: rgb(0, 117, 121);
+    border-color: rgb(0, 79, 82);
+}
+#ul-back:active{
+    background-color: rgb(0, 79, 82);
+    border-color: rgb(0, 51, 53);
+}
+#ul-back.ub-hidden{
+    display: none;
+}
+#cd-back{
+    display: static;
+    grid-area: cb;
+    background-color: rgb(182, 151, 105);
+    border: solid rgb(109, 81, 39) 0.2em;
+    border-radius: 0.7em;
+    width: 3em;
+    height: 5vh;
+    z-index: 1;
+    font-size: 1.6vh;
+    text-align: center;
+    transition: 0.5s;
+}
+#cd-back:hover{
+    background-color: rgb(139, 106, 56);
+    border-color: rgb(167, 130, 76);
+    color: white;
+}
+#cd-back:active{
+    background-color: rgb(92, 67, 29);
+    border-color: rgb(167, 130, 76);
+    color: white;
+}
+#add-user{
+    display: static;
+    background-color: rgb(2, 105, 109);
+    border: solid rgb(19, 153, 158) 0.2em;
+    width: 3em;
+    height: 3em;
+    border-radius: 0.7em;
+    grid-row: 1/2;
+    grid-column: 1/3;
+    transition: 0.5s;
+    line-height: 3em;
+    text-align: center;
+    color: white;
+    -webkit-text-stroke: black 0.01em;
+    transition: 0.5s;
+}
+#add-user:hover{
+    background-color: rgb(0, 76, 78);
+    border-color: rgb(28, 170, 175);
+}
+#add-user:active{
+    background-color: rgb(0, 62, 65);
+    border-color: rgb(51, 207, 212);
+}
+body{
+    height: 100%;
+    background-color: rgb(0, 181, 187);
+    margin: 0px;
+}
+body > .connection-request{
+    position: fixed;
+    top: 0px;
+    min-height: 100%;
+    min-width: 100%;
+    z-index: 20;
+    background-color: rgba(0, 0, 0, 0.288);
+}
+body > .connection-request > .connection-container{
+    position: fixed;
+    display: grid;
+    height: 30%;
+    width: 60%;
+    background-color: rgb(15, 91, 94);
+    border-radius: 3em;
+    top: 35%;
+    box-shadow: rgba(0, 0, 0, 0.438) 3em 3em 3em;
+    left: 50%;
+    transform: translateX(-50%);
+    grid-template-columns: 10% 10% 10% 10% 10% 10% 10% 10% 10% 10%;
+    grid-template-rows: 10% 10% 10% 10% 10% 10% 10% 10% 10% 10%;
+    border: solid rgb(3, 53, 54) 1em;
+}
+body > .connection-request > .connection-container > .text-container{
+    grid-column: 4/8;
+    grid-row: 4/8;
+    color: white;
+    font-family: sans-serif;
+    text-shadow: 0.2em 0.2em 0.2em rgb(1, 32, 34);
+    font-size: 4vw;
+}
+body > .connection-request > .connection-container > .accept-connection{
+    background-color: green;
+    grid-row: 8/11;
+    grid-column: 8/10;
+    color: white;
+    border-color: green;
+    border-radius: 3em;
+    margin-bottom: 0.5em;
+    font-size: 0.7em;
+    transition: background-color 0.5s;
+    font-size: 2.2vw;
+}
+body > .connection-request > .connection-container > .accept-connection:hover{
+    background-color: rgb(0, 83, 0);
+}
+body > .connection-request > .connection-container > .accept-connection:active{
+    background-color: rgb(0, 58, 0);
+}
+body > .connection-request > .connection-container > .reject-connection{
+    background-color: red;
+    grid-row: 8/11;
+    grid-column: 2/4;
+    color: white;
+    border-color: red;
+    border-radius: 3em;
+    margin-bottom: 0.5em;
+    font-size: 0.7em;
+    transition: background-color 0.5s;
+    font-size: 2.2vw;
+}
+body > .connection-request > .connection-container > .reject-connection:hover{
+    background-color: rgb(165, 0, 0);
+}
+body > .connection-request > .connection-container > .reject-connection:active{
+    background-color: rgb(110, 0, 0);
+}
+.maximize-request-hidden{
+    display: none;
+}
+.minimize-request-hidden{
+    display: none;
+}
+.minimize-request{
+    grid-row: 1/4;
+    grid-column: 9/11;
+    background-color: rgb(15, 91, 94);
+    color: white;
+    border-color: rgb(15, 91, 94);
+    border-radius: 3em;
+    margin-right: 1.7em;
+    transition: background-color 0.5s;
+    font-size: 2.2vw;
+}
+.minimize-request:hover{
+    background-color: rgb(5, 56, 58);
+}
+.minimize-request:active{
+    background-color: rgb(0, 30, 31);
+}
+#notification > *{
+    height: 5vh;
+    min-width: 95%;
+    background-color: rgb(15, 91, 94);
+    color: white;
+    grid-column: 1/2;
+    transition: background-color 0.5s;
+}
+#notification > *:hover{
+    background-color: rgb(2, 51, 53);
+}
+#notification > .connection-request > .connection-container{
+    display: grid;
+    grid-template-columns: 5% 5% 5% 5% 5% 5% 5% 5% 5% 5% 5% 5% 5% 5% 5% 5% 5% 5% 5% 5%;
+    grid-template-rows: 100%;
+    height: 5vh;
+}
+#notification > .connection-request > .connection-container > .text-container{
+    grid-column: 4/15;
+    grid-row: 1/2;
+    height: 5vh;
+    padding-top: 1vh;
+    color: white;
+    font-family: sans-serif;
+    text-shadow: 0.2em 0.2em 0.2em rgb(1, 32, 34);
+    line-height: 3em;
+    padding-left: 1.5vw;
+    font-size: 2.2vw;
+}
+#notification > .connection-request > .connection-container > .accept-connection{
+    background-color: green;
+    grid-row: 1/2;
+    grid-column: 15/18;
+    color: white;
+    border-color: green;
+    height: 5vh;
+    font-size: 2.2vw;
+    border-radius: 3em;
+    width: fit-content;
+    transition: background-color 0.5s;
+}
+#notification > .connection-request > .connection-container > .accept-connection:hover{
+    background-color: rgb(0, 83, 0);
+}
+#notification > .connection-request > .connection-container > .accept-connection:active{
+    background-color: rgb(0, 58, 0);
+}
+#notification > .connection-request > .connection-container > .reject-connection{
+    background-color: red;
+    grid-row: 1/2;
+    grid-column: 18/21;
+    color: white;
+    height: 5vh;
+    border-color: red;
+    font-size: 2.2vw;
+    border-radius: 3em;
+    width: fit-content;
+    transition: background-color 0.5s;
+}
+#notification > .connection-request > .connection-container > .reject-connection:hover{
+    background-color: rgb(165, 0, 0);
+}
+#notification > .connection-request > .connection-container > .reject-connection:active{
+    background-color: rgb(110, 0, 0);
+}
+.maximize-request{
+    grid-row: 1/4;
+    grid-column: 1/2;
+    background-color: rgb(15, 91, 94);
+    color: white;
+    width: fit-content;
+    height: 5vh;
+    font-size: 2.2vw;
+    border-color: rgb(15, 91, 94);
+    border-radius: 3em;
+    margin-right: 1.7em;
+    transition: background-color 0.5s;
+}
+.maximize-request:hover{
+    background-color: rgb(5, 56, 58);
+}
+.maximize-request:active{
+    background-color: rgb(0, 30, 31);
+}
+#maximize-notification{
+    position: sticky;
+    top: 0px;
+    min-width: 5%;
+    grid-column: 2/3;
+    grid-row: 1/2;
+    background-color: rgb(15, 91, 94);
+    font-size: 6vw;
+    line-height: 5vh;
+    height: 5vh;
+    text-align: center;
+}
+/*#chat-container{
+    display: grid;
+    position: fixed;
+    height: 80%;
+    top: 15%;
+    bottom: 5%;
+    background-color: red;
+    box-shadow: rgb(0, 79, 82) 1em 1em 1em;
+    grid-template-areas: 
+    "head head head head"
+    "username username username username"
+    "side chatDis chatDis chatDis"
+    "side chatDis chatDis chatDis"
+    "side chatDis chatDis chatDis"
+    "side chatDis chatDis chatDis"
+    "side chatDis chatDis chatDis"
+    "side chatDis chatDis chatDis"
+    "side chatDis chatDis chatDis"
+    "side chatDis chatDis chatDis"
+    "side chatDis chatDis chatDis"
+    "side chatDis chatDis chatDis"
+    "side chatDis chatDis chatDis"
+    "side chatDis chatDis chatDis"
+    "side chatDis chatDis chatDis"
+    "side chatDis chatDis chatDis"
+    "side chatDis chatDis chatDis"
+    "side messageForm messageForm messageForm"
+    ;
+}*/
+#head{
+    grid-area: head;
+    position: fixed;
+    height: 5vh;
+    top: 0px;
+    width: 100%;
+    background-color: rgb(0, 57, 59);
+    margin: 0px;
+    color: rgb(252, 215, 168);
+    text-align: center;
+    -webkit-text-stroke: rgb(0, 181, 187) 0.01em;
+    font-size: 3vh;
+}
+#username{
+    grid-area: username;
+    position: fixed;
+    top: 5vh;
+    height: 5vh;
+    width: 100%;
+    background-color: rgb(0, 57, 59);
+    margin: 0px;
+    color: rgb(255, 190, 106);
+    text-align: center;
+    -webkit-text-stroke: rgb(0, 181, 187) 0.01em;
+    font-size: 2vh;
+}
+#side-view{
+    display: grid;
+    background-color: rgb(2, 105, 109);
+    grid-area: side;
+    grid-template-rows: 70% 30%;
+}
+#users-list{
+    display: grid;
+    position: fixed;
+    bottom: 0px;
+    height: 85vh;
+    top: 15vh;
+    width: 100%;
+    background-color: rgb(62, 201, 206);
+    grid-template-rows: 3em 3em 3em 3em 3em 3em 3em 3em 3em 3em 3em;
+    grid-template-columns: 10% 10% 10% 10% 10% 10% 10% 10% 10% 10%;
+    row-gap: 0.5em;
+    overflow-y: scroll;
+}
+#users-list > a{
+    background-color: rgb(0, 117, 121);
+    color: white;
+    justify-self: center;
+    text-align: center;
+    width: 100%;
+    line-height: 3em;
+    grid-column: 1/11;
+    transition: 0.5s;
+    cursor:pointer;
+}
+#users-list > a:hover{
+    background-color: rgb(0, 79, 82);
+}
+#connected-users{
+    display: grid;
+    position: fixed;
+    bottom: 0px;
+    height: 85vh;
+    top: 15vh;
+    width: 100%;
+    background-color: rgb(2, 105, 109);
+    grid-template-rows: 3em 3em 3em 3em 3em 3em 3em 3em 3em 3em 3em;
+    grid-template-columns: 10% 10% 10% 10% 10% 10% 10% 10% 10% 10%;
+    row-gap: 0.5em;
+    overflow-y: scroll;
+    border-top: rgb(0, 57, 59) solid 0.4em;
+}
+#connected-users > button{
+    background-color: rgb(19, 153, 158);
+    color: white;
+    justify-self: center;
+    grid-column: 1/11;
+    text-align: center;
+    width: 100%;
+    line-height: 3em;
+    transition: 0.5s;
+    border: none;
+}
+#connected-users > button:hover{
+    background-color: rgb(61, 199, 204);
+    color: black;
+}
+#chat-display{
+    display: grid;
+    position: fixed;
+    top: 15vh;
+    height: 80vh;
+    width: 100vw;
+    bottom: 5vh;
+    background-color: rgb(99, 77, 45);
+    grid-area: chatDis;
+    grid-template-areas: 
+    "cb oc oc oc"
+    "oc oc oc oc"
+    "oc oc oc oc"
+    "oc oc oc oc"
+    "oc oc oc oc"
+    ;
+}
+#notification{
+    display: grid;
+    position: fixed;
+    height: 5vh;
+    width: 100vw;
+    top: 10vh;
+    grid-area: notification;
+    background-color: rgb(128, 251, 255);
+    overflow-y: scroll;
+    overflow-x: hidden;
+    grid-template-rows: 3em 3em 3em 3em 3em 3em 3em;
+    grid-template-columns: 95% 5%;
+    transition: height 0.5s;
+    z-index: 3;
+}
+#message-form{
+    display: grid;
+    background-color: blanchedalmond;
+    grid-area: messageForm;
+    grid-template-areas:
+    "mt mt mt mt mt mt smb"
+    ;
+    position: fixed;
+    height: 5%;
+    width: 90%;
+    bottom: 0px;
+    padding-right: 5%;
+    padding-left: 5%;
+    padding-bottom: 3%;
+}
+#message-text{
+    grid-area: mt;
+    background-color: rgb(139, 106, 59);
+    color: white;
+    border-radius: 3em;
+}
+#message-text:hover{
+    background-color: rgb(177, 148, 106);
+}
+#message-text:focus{
+    background-color: rgb(207, 178, 134);
+    color: black;
+}
+#send-message-button{
+    grid-area: smb;
+    grid-column: 7/8;
+    background-color: rgb(224, 198, 159);
+    border-color: rgb(109, 81, 39);
+    border-radius: 3em;
+    transition: background-color 0.5s;
+}
+#send-message-button:hover{
+    background-color: rgb(177, 148, 106);
+}
+#send-message-button:active{
+    background-color: rgb(158, 124, 77);
+}
+.overall-container{
+    display: grid;
+    min-height: 80vh;
+    gap: 0px;
+    grid-template-rows: 10% 90%;
+    grid-area: oc;
+    height: 100%;
+}
+.messages-container{
+    display: grid;
+    overflow-y: scroll;
+    max-width: 100%;
+    height: 73%;
+    border-top: solid rgb(99, 77, 45) 5px;
+    background-color: blanchedalmond;
+    border-bottom: solid rgb(99, 77, 45) 5px;
+    padding-left: 1em;
+    grid-template-rows: min-content min-content min-content min-content min-content min-content min-content min-content min-content min-content min-content ;
+}
+.controls-container{
+    display: grid;
+    top: 0px;
+    height: 5vh;
+    grid-template-columns: repeat(9, 1fr);
+    gap: 0.2em;
+    background-color: blanchedalmond;
+    border-bottom: solid rgb(99, 77, 45) 5px;
+}
+.call-button{
+    grid-column: 7/8;
+    background-color: rgb(224, 198, 159);
+    border-color: rgb(109, 81, 39);
+    border-radius: 3em;
+    height: 5vh;
+    font-size: 1.6vh;
+    transition: background-color 0.5s;
+}
+.call-button:hover{
+    background-color: rgb(177, 148, 106);
+}
+.call-button:active{
+    background-color: rgb(158, 124, 77);
+}
+.vcall-button{
+    grid-column: 8/9;
+    background-color: rgb(224, 198, 159);
+    border-color: rgb(109, 81, 39);
+    height: 5vh;
+    border-radius: 3em;
+    font-size: 1.6vh;
+    transition: background-color 0.5s;;
+}
+.vcall-button:hover{
+    background-color: rgb(177, 148, 106);
+}
+.vcall-button:active{
+    background-color: rgb(158, 124, 77);
+}
+.disconnect-button{
+    grid-column: 9/10;
+    background-color: rgb(224, 198, 159);
+    border-color: rgb(109, 81, 39);
+    height: 5vh;
+    border-radius: 3em;
+    font-size: 1.6vh;
+    transition: background-color 0.5s;
+}
+.disconnect-button:hover{
+    background-color: rgb(177, 148, 106);
+}
+.disconnect-button:active{
+    background-color: rgb(158, 124, 77);
+}
+.myMessages{
+    color: black;
+    background-color: rgb(190, 190, 190);
+    max-width: 50vw;
+    justify-self: right;
+    overflow-wrap: break-word;
+    border-radius: 40px;
+    border-bottom-right-radius: 0px;
+    border-color: rgb(105, 105, 105);
+    height: fit-content;
+    margin-top: 0.4em;
+}
+.myMessages > .message-time{
+    color: rgb(54, 37, 37);
+}
+.message-body{
+    font-size: smaller;
+    padding-top: 1em;
+    padding-right: 1em;
+    padding-left: 1em;
+}
+.message-time{
+    padding-bottom: 1em;
+    padding-right: 1em;
+    padding-left: 1em;
+    font-size: x-small;
+}
+.receivedMessages{
+    color: white;
+    background-color: rgb(20, 157, 175);
+    max-width: 50vw;
+    overflow-wrap: break-word;
+    justify-self: left;
+    border-radius: 40px;
+    border-bottom-left-radius: 0px;
+    border-color: rgb(8, 64, 71);
+    height: fit-content;
+    margin-top: 0.4em;
+}
+.receivedMessages > .message-time{
+    color: rgb(224, 182, 182);
+}
+#video-call{
+    display: none;
+    position: fixed;
+    height: 100%;
+    width: 100%;
+    z-index: 10;
+    background-color: rgb(2, 105, 109);
+    margin: 0px;
+    border: 0.5em rgb(0, 44, 46) solid;
+}
+#local-video{
+    position: fixed;
+    bottom: 0px;
+    min-height: 100%;
+    min-width: 100%;
+    object-fit: cover;
+    transition: 1s;
+}
+#remote-video{
+    position: fixed;
+    height: 100%;
+    width: 100%;
+    object-fit: contain;
+    align-self: center;
+    left: 50%;
+    transform: translateX(-50%);
+}
+#disconnect-video-call{
+    text-align: center;
+    line-height: 6em;
+    position: fixed;
+    background-color: red;
+    color: white;
+    height: 6em;
+    width: 6em;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 0px;
+    border-radius: 50%;
+    font-family: sans-serif;
+}
+#disconnect-video-call:hover{
+    background-color: rgb(201, 1, 1);
+}
+#disconnect-video-call:active{
+    background-color: rgb(167, 0, 0);
+}
+#audio-call{
+    display: none;
+    position: fixed;
+    height: 100%;
+    width: 100%;
+    z-index: 10;
+    background-color: rgb(2, 105, 109);
+    margin: 0px;
+    border: 0.5em rgb(0, 44, 46) solid;
+}
+#disconnect-audio-call{
+    text-align: center;
+    line-height: 6em;
+    position: fixed;
+    background-color: red;
+    color: white;
+    height: 6em;
+    width: 6em;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 0px;
+    border-radius: 50%;
+    font-family: sans-serif;
+}
+#disconnect-video-call:hover{
+    background-color: rgb(201, 1, 1);
+}
+#disconnect-video-call:active{
+    background-color: rgb(167, 0, 0);
+}
+#video-call-time{
+    display: none;
+    position: fixed;
+    min-height: fit-content;
+    min-width: 5%;
+    text-align: center;
+    background-color: rgb(0, 44, 46);
+    border: black solid 0.2em;
+    color: white;
+    top: 0px;
+    left: 0px;
+    -webkit-text-stroke: black 0.01em;
+}
+#audio-call-time{
+    display: none;
+    position: fixed;
+    min-height: fit-content;
+    min-width: 5%;
+    text-align: center;
+    background-color: rgb(0, 44, 46);
+    border: black solid 0.2em;
+    color: white;
+    top: 0px;
+    left: 0px;
+    -webkit-text-stroke: black 0.01em;
+}
+body > .video-call-ring{
+    position: fixed;
+    height: 100%;
+    max-height: 100%;
+    width: 100%;
+    max-width: 100%;
+    top: 0px;
+    color: burlywood;
+    font-size: 10vw;
+    font-weight: bold;
+    z-index: 21;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    background-color: rgb(2, 105, 109);
+    border: 0.2em rgb(0, 44, 46) solid;
+    margin: 0px;
+}
+body > .video-call-ring > .accept-call {
+    text-align: center;
+    line-height: 25vw;
+    position: fixed;
+    background-color: green;
+    color: white;
+    height: 25vw;
+    width: 25vw;
+    left: 60%;
+    transform: translateX(-20%);
+    bottom: 5em;
+    border-radius: 50%;
+    font-family: sans-serif;
+}
+body > .video-call-ring > .accept-call:hover{
+    background-color: rgb(0, 92, 0);
+    animation: callButtonMove 3s infinite ease;
+}
+body > .video-call-ring > .accept-call:active{
+    background-color: rgb(0, 54, 0);
+}
+body > .video-call-ring > .reject-call{
+    text-align: center;
+    line-height: 25vw;
+    position: fixed;
+    background-color: red;
+    color: white;
+    height: 25vw;
+    width: 25vw;
+    left: 40%;
+    transform: translateX(-80%);
+    bottom: 5em;
+    border-radius: 50%;
+    font-family: sans-serif;
+}
+body > .video-call-ring > .reject-call:hover{
+    background-color: rgb(201, 1, 1);
+    animation: callButtonMove 3s infinite ease;
+}
+body > .video-call-ring > .reject-call:active{
+    background-color: rgb(133, 0, 0);
+}
+body > .audio-call-ring{
+    position: fixed;
+    height: 100%;
+    max-height: 100%;
+    width: 100%;
+    max-width: 100%;
+    top: 0px;
+    color: burlywood;
+    z-index: 21;
+    font-size: 10vw;
+    font-weight: bold;
+    font-family: sans-serif;
+    background-color: rgb(2, 105, 109);
+    border: 0.2em rgb(0, 44, 46) solid;
+    margin: 0px;
+}
+body > .audio-call-ring > .accept-call {
+    text-align: center;
+    line-height: 25vw;
+    position: fixed;
+    background-color: green;
+    color: white;
+    height: 25vw;
+    width: 25vw;
+    left: 60%;
+    transform: translateX(-20%);
+    bottom: 5em;
+    border-radius: 50%;
+    font-family: sans-serif;
+}
+body > .audio-call-ring > .accept-call:hover{
+    background-color: rgb(0, 92, 0);
+    animation: callButtonMove 3s infinite ease;
+}
+body > .audio-call-ring > .accept-call:active{
+    background-color: rgb(0, 54, 0);
+}
+body > .audio-call-ring > .reject-call{
+    text-align: center;
+    line-height: 25vw;
+    position: fixed;
+    background-color: red;
+    color: white;
+    height: 25vw;
+    width: 25vw;
+    left: 40%;
+    transform: translateX(-80%);
+    bottom: 5em;
+    border-radius: 50%;
+    font-family: sans-serif;
+}
+body > .audio-call-ring > .reject-call:hover{
+    background-color: rgb(201, 1, 1);
+    animation: callButtonMove 3s infinite ease;
+}
+body > .audio-call-ring > .reject-call:active{
+    background-color: rgb(133, 0, 0);
+}
+#notification > .video-call-ring{
+    display: grid;
+    grid-template-columns: 5% 5% 5% 5% 5% 5% 5% 5% 5% 5% 5% 5% 5% 5% 5% 5% 5% 5% 5% 5%;
+    grid-template-rows: 100%;
+}
+#notification > .video-call-ring > .video-text-container{
+    grid-column: 4/15;
+    grid-row: 1/2;
+    height: 5vh;
+    padding-top: 1vh;
+    color: white;
+    font-family: sans-serif;
+    text-shadow: 0.2em 0.2em 0.2em rgb(1, 32, 34);
+    line-height: 3em;
+    padding-left: 1.5vw;
+    font-size: 2.2vw;
+}
+#notification > .video-call-ring > .accept-call {
+    background-color: green;
+    grid-row: 1/2;
+    grid-column: 15/18;
+    color: white;
+    border-color: green;
+    height: 5vh;
+    font-size: 2.2vw;
+    border-radius: 3em;
+    width: fit-content;
+    transition: background-color 0.5s;
+}
+#notification > .video-call-ring > .accept-call:hover{
+    background-color: rgb(0, 83, 0);
+}
+#notification > .video-call-ring > .accept-call:active{
+    background-color: rgb(0, 58, 0)
+}
+#notification > .video-call-ring > .reject-call{
+    background-color: red;
+    grid-row: 1/2;
+    grid-column: 18/21;
+    color: white;
+    height: 5vh;
+    border-color: red;
+    font-size: 2.2vw;
+    border-radius: 3em;
+    width: fit-content;
+    transition: background-color 0.5s;
+}
+#notification > .video-call-ring > .reject-call:hover{
+    background-color: rgb(165, 0, 0);
+}
+#notification > .video-call-ring > .reject-call:active{
+    background-color: rgb(110, 0, 0);
+}
+#notification > .audio-call-ring{
+    display: grid;
+    grid-template-columns: 5% 5% 5% 5% 5% 5% 5% 5% 5% 5% 5% 5% 5% 5% 5% 5% 5% 5% 5% 5%;
+    grid-template-rows: 100%;
+}
+#notification > .audio-call-ring > .audio-text-container{
+    grid-column: 4/15;
+    grid-row: 1/2;
+    height: 5vh;
+    padding-top: 1vh;
+    color: white;
+    font-family: sans-serif;
+    text-shadow: 0.2em 0.2em 0.2em rgb(1, 32, 34);
+    line-height: 3em;
+    padding-left: 1.5vw;
+    font-size: 2.2vw;
+}
+#notification > .audio-call-ring > .accept-call {
+    background-color: green;
+    grid-row: 1/2;
+    grid-column: 15/18;
+    color: white;
+    border-color: green;
+    height: 5vh;
+    font-size: 2.2vw;
+    border-radius: 3em;
+    width: fit-content;
+    transition: background-color 0.5s;
+}
+#notification > .audio-call-ring > .accept-call:hover{
+    background-color: rgb(0, 83, 0);
+}
+#notification > .audio-call-ring > .accept-call:active{
+    background-color: rgb(0, 58, 0)
+}
+#notification > .audio-call-ring > .reject-call{
+    background-color: red;
+    grid-row: 1/2;
+    grid-column: 18/21;
+    color: white;
+    height: 5vh;
+    border-color: red;
+    font-size: 2.2vw;
+    border-radius: 3em;
+    width: fit-content;
+    transition: background-color 0.5s;
+}
+#notification > .audio-call-ring > .reject-call:hover{
+    background-color: rgb(165, 0, 0);
+}
+#notification > .audio-call-ring > .reject-call:active{
+    background-color: rgb(110, 0, 0);
+}
+.maximize-call{
+    grid-row: 1/4;
+    grid-column: 1/2;
+    background-color: rgb(15, 91, 94);
+    color: white;
+    width: fit-content;
+    height: 5vh;
+    font-size: 2.2vw;
+    border-color: rgb(15, 91, 94);
+    border-radius: 3em;
+    margin-right: 1.7em;
+    transition: background-color 0.5s;
+}
+.maximize-call:hover{
+    background-color: rgb(5, 56, 58);
+}
+.maximize-call:active{
+    background-color: rgb(0, 30, 31);
+}
+.maximize-call-hidden{
+    display: none;
+}
+.minimize-call{
+    position: absolute;
+    right: 0px;
+    top: 0px;
+    height: 5%;
+    width: 10%;
+    background-color: rgb(15, 91, 94);
+    color: white;
+    border-color: rgb(15, 91, 94);
+    margin-right: 1.7em;
+    transition: background-color 0.5s;
+}
+.minimize-call:hover{
+    background-color: rgb(5, 56, 58);
+}
+.minimize-call:active{
+    background-color: rgb(0, 30, 31);
+}
+.minimize-call-hidden{
+    display: none;
+}
+.view-users-list{
+    z-index: 5;
+
+}
+#chat-display.open-chat-display{
+    z-index: 8;
+    background-color: transparent;
+}
+#chat-display.open-chat-display > .overall-container > *{
+    background-color: transparent;
+    border-color: transparent;
+    color: transparent;
+}
+#cd-back.hide-cb{
+    background-color: transparent;
+    border-color: transparent;
+    color: transparent;
+    transition: 0s;
+}
+#chat-display.p-open-chat-display{
+    z-index: 7;
+}
+#notification.open-notification{
+    height: 85vh;
+}
+#message-form.p-open-message-form{
+    z-index: 7;
+}
+#side-view.p-open-side-view{
+    z-index: 6;
+}
+#connected-users.p-open-connected-users{
+    z-index: 6;
+}
+#users-list.open-users-list{
+    z-index: 7;
+}
+@keyframes callButtonMove {
+    0%{bottom: 5em;}
+    25%{bottom: 8em;}
+    50%{bottom: 5em;}
+    75%{bottom: 8em;}
+    100%{bottom: 5em;}
+    
+}

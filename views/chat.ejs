@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%=username%></title>
+    <link rel="icon" href="https://cdn.glitch.global/53b8cfe1-6596-453c-9bc9-941b96533f6d/16203711211556274007-128.png?v=1642252735545" type="image/x-icon">
+    <link rel="stylesheet" href="/css/chat1.css" media="screen and (max-width: 500px)">
+    <link rel="stylesheet" href="/css/chat2.css" media="screen and (min-width: 501px) and (max-width: 1000px)">
+    <link rel="stylesheet" href="/css/chat3.css" media="screen and (min-width: 1001px)">
+</head>
+<body>
+    <div id="calls">
+        <div id="video-call">
+            <video id="remote-video"></video>
+            <video id="local-video" muted></video>
+            <div id="disconnect-video-call">END</div>
+            <div id="video-call-time"></div>
+            <div id="video-call-info"></div>
+        </div>
+        <div id="audio-call" >
+            <audio id="local-audio" muted></audio>
+            <audio id="remote-audio"></audio>
+            <div id="disconnect-audio-call">END</div>
+            <div id="audio-call-time"></div>
+            <div id="audio-call-info"></div>
+        </div>
+        
+    </div>
+    <div id="chat-container">
+        <button id="open-sv">⇉</button>
+        <h2 id="head">OBBLiT's Chat Site</h1>
+        <h3 id="username">@<%=username%></h2>
+        <aside id="side-view" class="side-view-opened">
+            <div id="users-list" class="view-users-list">
+                <div id="users-list-tag">Users Online</div>
+                <button id="sv-back">⇇</button>
+                <div id="ul-back">Back</div>
+                <% users.forEach((item)=>{ %>
+                    <a id="<%=item.username%>" class="users-list"><%=item.username%></a>
+               <% }); %>
+            </div>
+            <div id="connected-users">
+                <div id="connected-users-tag">Connected Users</div>
+                <div id="add-user">+</div>
+            </div>
+        </aside>
+        <div id="chat-display">
+            <div id="notification">
+                <div id="maximize-notification">⟱</div>
+            </div>
+            <button id="cd-back">Back</button>
+        </div>
+        <form id="message-form">
+            <input autocomplete="off" autocapitalize="on" type="text" name="message" id="message-text" oninput="clearUnread()">
+            <input type="submit" value="send-message" id="send-message-button">
+        </form>
+
+    </div>
+    <script src="https://unpkg.com/peerjs@1.3.1/dist/peerjs.min.js"></script>
+    <script src="/socket.io/socket.io.js"></script>
+    <script>
+        const username = '<%=username%>';
+    </script>
+    <script src="js/chat.js"></script>
+</body>
+</html>
